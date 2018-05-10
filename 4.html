@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
     <style>
             #scroll-images img{
                 display: block;
@@ -34,7 +35,13 @@
             var z_index = 999;
             
             function job1() {
+                
+
+                $($("#scroll-images img")[(index-1<0?6:index-1)]).css({left:"480px"}).animate({left:"0"},600)
+
         
+
+
                 $($("#scroll-images img")[index]).animate({left:"-480px"}, 600, function(){
                     z_index = z_index -1;
                     $(this).css({zIndex: z_index,left:0});
@@ -53,7 +60,6 @@
                 setInterval(job1, 1000);
             })
         </script>
-
     
 </body>
 </html>
